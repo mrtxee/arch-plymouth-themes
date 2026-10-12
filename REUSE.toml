@@ -24,9 +24,18 @@ precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 Mr Txee (mrtxee)"
 SPDX-License-Identifier = "GPL-2.0-only"
 
-# Animated previews rendered by tools/make-preview.sh.
+# Animated previews rendered by tools/make-preview.sh, and the static 40%-of-cycle
+# stills exported from them.
 [[annotations]]
 path = "preview/*.apng"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Mr Txee (mrtxee)"
+SPDX-License-Identifier = "GPL-2.0-only"
+
+# Static stills: one PNG per theme, taken at 40% of the animation cycle.
+# These are renders of the GPL'd previews, so they inherit GPL-2.0-only.
+[[annotations]]
+path = "preview/*.png"
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 Mr Txee (mrtxee)"
 SPDX-License-Identifier = "GPL-2.0-only"

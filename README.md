@@ -30,19 +30,19 @@ commands below.
 
 Rotating arc, 24 frames, ~1.6&nbsp;s cycle.
 
-<a href="preview/arch-boot-spinner.apng"><img src="preview/arch-boot-spinner.apng" alt="arch-boot-spinner animated preview" width="640"></a>
+<a href="preview/arch-boot-spinner.png"><img src="preview/arch-boot-spinner.apng" alt="arch-boot-spinner animated preview" width="640"></a>
 
 ### arch-boot-orbital-dot
 
 Thin ring with an orbiting dot, 36 frames, ~1.8&nbsp;s cycle.
 
-<a href="preview/arch-boot-orbital-dot.apng"><img src="preview/arch-boot-orbital-dot.apng" alt="arch-boot-orbital-dot animated preview" width="640"></a>
+<a href="preview/arch-boot-orbital-dot.png"><img src="preview/arch-boot-orbital-dot.apng" alt="arch-boot-orbital-dot animated preview" width="640"></a>
 
 ### arch-boot-dots
 
 Three dots, glow walking left&ndash;right, 9 frames, ~0.9&nbsp;s cycle.
 
-<a href="preview/arch-boot-dots.apng"><img src="preview/arch-boot-dots.apng" alt="arch-boot-dots animated preview" width="640"></a>
+<a href="preview/arch-boot-dots.png"><img src="preview/arch-boot-dots.apng" alt="arch-boot-dots animated preview" width="640"></a>
 
 
 ## Installation
