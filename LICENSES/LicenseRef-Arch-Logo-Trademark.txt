@@ -1,0 +1,44 @@
+LicenseRef-Arch-Logo-Trademark
+================================
+
+Applies to: splash-arch.png in each theme directory.
+
+This file is the Arch Linux logo. It is NOT software authored by this project
+and is NOT licensed under the GNU General Public License. The GPL-2.0-only
+notice that covers the .script and .plymouth sources of this repository does
+not extend to this artwork.
+
+The Arch Linux name and logo are recognized trademarks owned by Levente Polyak
+(the Arch Linux Project Lead) and Judd Vinet, on behalf of Arch Linux.
+
+  "Copyright (c) 2002-2026 Judd Vinet, Aaron Griffin and Levente Polyak. The
+  Arch Linux name and logo are recognized trademarks. Some rights reserved."
+
+Use of this artwork is governed by the Arch Linux trademark policy and the
+Arch Linux artwork terms:
+
+  Trademark policy: https://terms.archlinux.org/docs/trademark-policy/
+  Artwork:          https://archlinux.org/art/
+
+Notable requirements quoted from those documents:
+
+  "there is no suggestion (through words or appearance) that your project is
+   approved, sponsored, or affiliated with Arch Linux or its related projects
+   unless it has been approved by and is accountable to the Arch Linux
+   Project Lead"
+
+  "The Trademark declaration (TM) must remain intact whenever displaying the
+   logos."
+
+  "Any scaling should retain the original proportions of the logo."
+
+This identifier is a LicenseRef- custom identifier as defined by the SPDX
+Specification, Clause 10 (Other Licensing Information Detected), and is
+required by the REUSE Specification so that a License File exists for every
+license expression used in the project. It denotes "third-party trademarked
+artwork, all rights reserved by the Arch Linux project" rather than a
+redistributable software license.
+
+Contact the Arch Linux project at trademarks@archlinux.org with questions
+about permitted use. If you redistribute these themes and would rather not
+carry this restriction, replace splash-arch.png with your own artwork.

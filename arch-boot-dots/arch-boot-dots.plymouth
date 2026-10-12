@@ -1,0 +1,18 @@
+# arch-boot-dots.plymouth - Plymouth theme descriptor for arch-boot-dots.
+#
+# Copyright (C) 2026 Mr Txee (mrtxee)
+# SPDX-License-Identifier: GPL-2.0-only
+#
+# Distributed under the GNU GPL v2; see LICENSE in the project root for the
+# full text. Not affiliated with or endorsed by Arch Linux. "Arch Linux" and
+# the Arch Linux logo are trademarks of the Arch Linux project.
+
+[Plymouth Theme]
+Name=Arch Boot Dots
+Description=Arch boot splash with glowing dots
+Comment=Created by Mr Txee (mrtxee), GPL-2.0-only
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/arch-boot-dots
+ScriptFile=/usr/share/plymouth/themes/arch-boot-dots/arch-boot-dots.script

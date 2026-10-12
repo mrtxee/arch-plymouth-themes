@@ -1,0 +1,42 @@
+# REUSE licensing annotations.
+#
+# Version 1 schema: https://reuse.software/reuse-toml-v1.schema.json
+# Specification: https://reuse.software/spec-3.3/
+#
+# This file exists only for the files that cannot carry an inline SPDX header.
+# The .script and .plymouth sources declare GPL-2.0-only in their own comment
+# headers, which is the RECOMMENDED method and needs no entry here.
+#
+# Note: in a single REUSE.toml only the LAST matching [[annotations]] table is
+# used for a file, so the splash-arch.png entry deliberately comes after the
+# spin-*.png glob to take precedence.
+#
+# LICENSE and LICENSES/ files are ignored by the REUSE tool wherever they sit,
+# so the per-theme copies in arch-boot-*/ need no entry below. They exist for
+# packaging and standalone reuse, not for REUSE compliance.
+
+version = 1
+
+# Spinner frames, authored for this project.
+[[annotations]]
+path = "*/spin-*.png"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Mr Txee (mrtxee)"
+SPDX-License-Identifier = "GPL-2.0-only"
+
+# Animated previews rendered by tools/make-preview.sh.
+[[annotations]]
+path = "preview/*.apng"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Mr Txee (mrtxee)"
+SPDX-License-Identifier = "GPL-2.0-only"
+
+# Arch Linux logo. Third-party trademarked artwork that this project does not
+# own and does not relicense under the GPL. See NOTICE for the full statement.
+# Placed last so it overrides the spin-*.png glob above.
+[[annotations]]
+path = "*/splash-arch.png"
+precedence = "override"
+SPDX-FileCopyrightText = "Judd Vinet, Aaron Griffin and Levente Polyak"
+SPDX-License-Identifier = "LicenseRef-Arch-Logo-Trademark"
+

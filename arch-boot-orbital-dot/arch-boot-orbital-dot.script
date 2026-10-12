@@ -1,0 +1,59 @@
+# arch-boot-orbital-dot.script - Arch logo centered (like systemd-boot) + spinner.
+# Black background; thin ring with a blue dot running along it
+# (36 frames by 10 deg, Arch brand #1793d1).
+#
+# Copyright (C) 2026 Mr Txee (mrtxee)
+# SPDX-License-Identifier: GPL-2.0-only
+#
+# Distributed under the GNU GPL v2; see LICENSE in the project root for the
+# full text. Not affiliated with or endorsed by Arch Linux. "Arch Linux" and
+# the Arch Linux logo are trademarks of the Arch Linux project.
+
+Window.SetBackgroundTopColor(0, 0, 0);
+Window.SetBackgroundBottomColor(0, 0, 0);
+
+# Logo (same splash as systemd-boot / UKI)
+logo.image  = Image("splash-arch.png");
+logo.sprite = Sprite(logo.image);
+logo.sprite.SetX(Window.GetX() + Window.GetWidth()  / 2 - logo.image.GetWidth()  / 2);
+logo.sprite.SetY(Window.GetY() + Window.GetHeight() / 2 - logo.image.GetHeight() / 2);
+
+# Spinner: ring + orbiting dot
+# Frame changes every spin_div redraws (no timer in script plugin).
+# Bigger spin_div = slower; 36 frames by 10 deg move the dot smoothly.
+# The ring is complete in every frame, so the final freeze before
+# handing over to GDM looks whole, not like a broken arc.
+frame_count = 36;
+spin_div    = 3;
+for (i = 0; i < frame_count; i++)
+  spinner_frames[i] = Image("spin-" + i + ".png");
+spinner_sprite = Sprite(spinner_frames[0]);
+spinner_sprite.SetX(Window.GetX() + Window.GetWidth() / 2 - spinner_frames[0].GetWidth() / 2);
+# Position: 3/7 of the way from logo bottom to screen bottom.
+logo_bottom = logo.sprite.GetY() + logo.image.GetHeight();
+spinner_sprite.SetY(logo_bottom + (Window.GetHeight() - logo_bottom) * 3.0 / 7);
+
+spinner_step  = 0;
+spinner_index = 0;
+
+fun on_refresh () {
+  spinner_step++;
+  if (spinner_step % spin_div == 0)
+    {
+      spinner_index = (spinner_index + 1) % frame_count;
+      spinner_sprite.SetImage(spinner_frames[spinner_index]);
+    }
+}
+Plymouth.SetRefreshFunction(on_refresh);
+
+# Stubs: keep layout on mode changes (no password prompt, root not encrypted)
+fun on_normal() { }
+Plymouth.SetDisplayNormalFunction(on_normal);
+
+fun on_message(text) { }
+fun on_hide_message(text) { }
+Plymouth.SetDisplayMessageFunction(on_message);
+Plymouth.SetHideMessageFunction(on_hide_message);
+
+fun on_quit() { }
+Plymouth.SetQuitFunction(on_quit);

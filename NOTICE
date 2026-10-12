@@ -1,0 +1,65 @@
+# Copyright (C) 2026 Mr Txee (mrtxee)
+# SPDX-License-Identifier: GPL-2.0-only
+
+plymouth-themes
+Copyright (C) 2026 Mr Txee (mrtxee)
+
+These Plymouth themes are distributed under the terms of the GNU General
+Public License, version 2 only. See the LICENSE file in the project root for
+the full license text. Source files carry an `SPDX-License-Identifier:
+GPL-2.0-only` tag.
+
+The GPL applies to the theme scripts (.script), the theme descriptors
+(.plymouth), the build/preview tooling and the preview files authored for
+this project.
+
+
+Third-party assets
+------------------
+
+splash-arch.png
+    The Arch Linux logo used as the boot splash background element. Its layout
+    follows the logo rendered by systemd-boot (see `src/boot/splash.c` in the
+    systemd source tree, which is LGPL-2.1-or-later). The artwork itself is
+    NOT authored by this project and is not relicensed by the GPL notice above.
+
+    The Arch Linux name and logo are recognized trademarks. The logo files
+    remain subject to the Arch Linux trademark policy and artwork terms:
+    https://terms.archlinux.org/docs/trademark-policy/
+    https://archlinux.org/art/
+
+    "Copyright (c) 2002-2026 Judd Vinet, Aaron Griffin and Levente Polyak.
+    The Arch Linux name and logo are recognized trademarks. Some rights
+    reserved." -- archlinux.org
+
+    Per that policy, the trademark declaration must remain intact and the logo
+    must not be presented in a way that implies approval, sponsorship or
+    affiliation with Arch Linux. Replacing splash-arch.png with your own
+    artwork is encouraged if you redistribute these themes.
+
+spin-*.png
+    Spinner animation frames generated for this project; covered by the GPL.
+
+
+Per-theme license copies
+------------------------
+Each arch-boot-*/ directory repeats the licensing files above (LICENSE and
+LICENSES/) so that a single theme can be copied or packaged on its own, as GPL
+v2 section 1 requires ("give any other recipients of the Program a copy of
+this License"). The copies are byte-identical to the repository-level files.
+Keep all copies in sync if the licensing ever changes.
+
+Plymouth is unaffected by these extra files: the script plugin reads only the
+ImageDir and ScriptFile keys from the .plymouth descriptor and never enumerates
+the theme directory.
+
+
+Attribution summary
+-------------------
+
+  Scripts, descriptors, previews, tooling   GPL-2.0-only  (Mr Txee)
+  splash-arch.png (Arch Linux logo)         trademarked artwork, not GPL
+                                            (Judd Vinet, Aaron Griffin,
+                                             Levente Polyak / Arch Linux)
+
+No warranty of any kind is provided; the themes are offered as-is.
