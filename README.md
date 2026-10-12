@@ -19,39 +19,30 @@ logo are trademarks of the Arch Linux project -- see [NOTICE](NOTICE).
 
 ## Themes
 
-Pick a theme name -- it is also the directory name and the argument to the
-install commands below.
+All previews are shown expanded below. Each one plays the exact layout and
+timing of its script on a 1280x800 black canvas; click a preview to open the
+full-size APNG in a new tab.
 
-<details>
-<summary><strong>arch-boot-spinner</strong> &mdash; rotating arc, 24 frames, ~1.6&nbsp;s cycle</summary>
+The theme name is also the directory name and the argument to the install
+commands below.
 
-<br>
+### arch-boot-spinner
+
+Rotating arc, 24 frames, ~1.6&nbsp;s cycle.
 
 <a href="preview/arch-boot-spinner.apng"><img src="preview/arch-boot-spinner.apng" alt="arch-boot-spinner animated preview" width="640"></a>
 
-</details>
+### arch-boot-orbital-dot
 
-<details>
-<summary><strong>arch-boot-orbital-dot</strong> &mdash; thin ring with an orbiting dot, 36 frames, ~1.8&nbsp;s cycle</summary>
-
-<br>
+Thin ring with an orbiting dot, 36 frames, ~1.8&nbsp;s cycle.
 
 <a href="preview/arch-boot-orbital-dot.apng"><img src="preview/arch-boot-orbital-dot.apng" alt="arch-boot-orbital-dot animated preview" width="640"></a>
 
-</details>
+### arch-boot-dots
 
-<details>
-<summary><strong>arch-boot-dots</strong> &mdash; three dots, glow walking left&ndash;right, 9 frames, ~0.9&nbsp;s cycle</summary>
-
-<br>
+Three dots, glow walking left&ndash;right, 9 frames, ~0.9&nbsp;s cycle.
 
 <a href="preview/arch-boot-dots.apng"><img src="preview/arch-boot-dots.apng" alt="arch-boot-dots animated preview" width="640"></a>
-
-</details>
-
-Expand a section to play the preview; click it to open the full-size 1280x800
-APNG. GitHub injects its own `target="_blank"` wrapper around images, so
-opening the original in a new tab works without any extra markup.
 
 
 ## Installation
@@ -226,6 +217,29 @@ exact layout and timing of the scripts on a 1280x800 black canvas:
 ```
 
 Requires ImageMagick 7 (`magick`) and `ffmpeg` with the APNG encoder.
+
+
+## Layout
+
+```
+arch-boot-spinner/       theme: descriptor + script + spin-*.png
+arch-boot-orbital-dot/   each also carries LICENSE and LICENSES/
+arch-boot-dots/
+preview/                 generated animated previews (APNG), 1280x800
+tools/make-preview.sh    preview renderer
+LICENSE                  GNU GPL v2, full text (whole repository)
+LICENSES/                REUSE license files for binary assets
+REUSE.toml               licensing for files that cannot carry a header
+NOTICE                   asset provenance and trademark notice
+```
+
+Every `.script` and `.plymouth` file carries an `GPL-2.0-only` tag. The
+`.plymouth` descriptors additionally expose a `Comment=` key, which is the
+conventional place for author metadata in Plymouth themes. Plymouth reads only
+`ModuleName`, `ImageDir` and `ScriptFile` from these files, so the extra keys
+are inert -- `#` comments are supported by Plymouth's own key-file parser, and
+`Comment=` is simply ignored.
+
 
 ## License
 
